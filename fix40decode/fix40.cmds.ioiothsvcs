@@ -1,0 +1,4 @@
+s/(24)=A|/(24)=A(Autex)|/g
+s/(24)=B|/(24)=B(Bridge)|/g
+s/(24)=AB|/(24)=AB(Autex+Bridge)|/g
+s/(24)=BA|/(24)=BA(Bridge+Autex)|/g

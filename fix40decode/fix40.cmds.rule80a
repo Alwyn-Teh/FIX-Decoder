@@ -1,0 +1,11 @@
+s/(47)=A|/(47)=A(Agency single order)|/g
+s/(47)=I|/(47)=I(Individual Investor, single order)|/g
+s/(47)=D|/(47)=D(Program Order, index arb, for Member firm\/org)|/g
+s/(47)=C|/(47)=C(Program Order, non-index arb, for Member firm\/org)|/g
+s/(47)=J|/(47)=J(Program Order, index arb, for individual customer)|/g
+s/(47)=K|/(47)=K(Program Order, non-index arb, for individual customer)|/g
+s/(47)=U|/(47)=U(Program Order, index arb, for other agency)|/g
+s/(47)=Y|/(47)=Y(Program Order, non-index arb, for other agency)|/g
+s/(47)=M|/(47)=M(Program Order, index arb, for other member)|/g
+s/(47)=N|/(47)=N(Program Order, non-index arb, for other member)|/g
+s/(47)=W|/(47)=W(All other orders as agent for other member)|/g

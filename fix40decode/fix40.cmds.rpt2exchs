@@ -1,0 +1,2 @@
+s/(113)=Y|/(113)=Y(Indicates that party receiving message must report trade)|/g
+s/(113)=N|/(113)=N(Indicates that party sending message will report trade)|/g

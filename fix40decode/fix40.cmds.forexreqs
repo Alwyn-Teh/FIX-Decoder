@@ -1,0 +1,2 @@
+s/(121)=Y|/(121)=Y(Execute Forex after security trade)|/g
+s/(121)=N|/(121)=N(Do not execute Forex after security trade)|/g

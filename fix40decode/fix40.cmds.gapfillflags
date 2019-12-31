@@ -1,0 +1,2 @@
+s/(123)=Y|/(123)=Y(Gap Fill message, MsgSeqNum field valid)|/g
+s/(123)=N|/(123)=N(Sequence Reset, ignore MsgSeqNum)|/g

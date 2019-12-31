@@ -1,0 +1,4 @@
+s/(87)=0|/(87)=0(accepted (successfully processed))|/g
+s/(87)=1|/(87)=1(rejected)|/g
+s/(87)=2|/(87)=2(partial accept)|/g
+s/(87)=3|/(87)=3(received (received, not yet processed))|/g

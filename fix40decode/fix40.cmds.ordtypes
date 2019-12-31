@@ -1,0 +1,15 @@
+s/(40)=1|/(40)=1(Market)|/g
+s/(40)=2|/(40)=2(Limit)|/g
+s/(40)=3|/(40)=3(Stop)|/g
+s/(40)=4|/(40)=4(Stop limit)|/g
+s/(40)=5|/(40)=5(Market on close)|/g
+s/(40)=6|/(40)=6(With or without)|/g
+s/(40)=7|/(40)=7(Limit or better)|/g
+s/(40)=8|/(40)=8(Limit with or without)|/g
+s/(40)=9|/(40)=9(On basis)|/g
+s/(40)=A|/(40)=A(On close)|/g
+s/(40)=B|/(40)=B(Limit on close)|/g
+s/(40)=C|/(40)=C(Forex)|/g
+s/(40)=D|/(40)=D(Previously quoted)|/g
+s/(40)=E|/(40)=E(Previously indicated)|/g
+s/(40)=P|/(40)=P(Pegged (requires ExecInst = L,R,M,P or O))|/g

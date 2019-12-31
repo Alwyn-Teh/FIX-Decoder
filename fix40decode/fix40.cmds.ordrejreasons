@@ -1,0 +1,5 @@
+s/(103)=0|/(103)=0(Broker option)|/g
+s/(103)=1|/(103)=1(Unknown symbol)|/g
+s/(103)=2|/(103)=2(Exchange closed)|/g
+s/(103)=3|/(103)=3(Order exceeds limit)|/g
+s/(103)=4|/(103)=4(Too late to enter)|/g

@@ -1,0 +1,2 @@
+s/(125)=P|/(125)=P(Partial cancel (reduce quantity))|/g
+s/(125)=F|/(125)=F(Full remaining quantity)|/g

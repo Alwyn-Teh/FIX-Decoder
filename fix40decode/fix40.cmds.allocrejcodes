@@ -1,0 +1,8 @@
+s/(88)=0|/(88)=0(unknown account(s))|/g
+s/(88)=1|/(88)=1(incorrect quantity)|/g
+s/(88)=2|/(88)=2(incorrect average price)|/g
+s/(88)=3|/(88)=3(unknown executing broker mnemonic)|/g
+s/(88)=4|/(88)=4(commission difference)|/g
+s/(88)=5|/(88)=5(unknown OrderID)|/g
+s/(88)=6|/(88)=6(unknown ListID)|/g
+s/(88)=7|/(88)=7(other)|/g

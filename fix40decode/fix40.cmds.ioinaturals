@@ -1,0 +1,2 @@
+s/(130)=Y|/(130)=Y(Natural)|/g
+s/(130)=N|/(130)=N(Not natural)|/g

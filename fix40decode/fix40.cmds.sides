@@ -1,0 +1,6 @@
+s/(54)=1|/(54)=1(Buy)|/g
+s/(54)=2|/(54)=2(Sell)|/g
+s/(54)=3|/(54)=3(Buy minus)|/g
+s/(54)=4|/(54)=4(Sell plus)|/g
+s/(54)=5|/(54)=5(Sell short)|/g
+s/(54)=6|/(54)=6(Sell short exempt)|/g

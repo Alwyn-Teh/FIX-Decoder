@@ -1,0 +1,25 @@
+s/(18)=1|/(18)=1(Not held)|/g
+s/(18)=2|/(18)=2(Work)|/g
+s/(18)=3|/(18)=3(Go along)|/g
+s/(18)=4|/(18)=4(Over the day)|/g
+s/(18)=5|/(18)=5(Held)|/g
+s/(18)=6|/(18)=6(Participate don't initiate)|/g
+s/(18)=7|/(18)=7(Strict scale)|/g
+s/(18)=8|/(18)=8(Try to scale)|/g
+s/(18)=9|/(18)=9(Stay on bidside)|/g
+s/(18)=0|/(18)=0(Stay on offerside)|/g
+s/(18)=A|/(18)=A(No cross)|/g
+s/(18)=B|/(18)=B(OK to cross)|/g
+s/(18)=C|/(18)=C(Call first)|/g
+s/(18)=D|/(18)=D(Percent of volume)|/g
+s/(18)=E|/(18)=E(Do not increase - DNI)|/g
+s/(18)=F|/(18)=F(Do not reduce - DNR)|/g
+s/(18)=G|/(18)=G(All or none - AON)|/g
+s/(18)=I|/(18)=I(Institutions only)|/g
+s/(18)=L|/(18)=L(Last peg (last sale))|/g
+s/(18)=M|/(18)=M(Mid-price peg (midprice of inside quote))|/g
+s/(18)=N|/(18)=N(Non-negotiable)|/g
+s/(18)=O|/(18)=O(Opening peg)|/g
+s/(18)=P|/(18)=P(Market peg)|/g
+s/(18)=R|/(18)=R(Primary peg (primary market - buy at bid\/sell at offer))|/g
+s/(18)=S|/(18)=S(Suspend)|/g

@@ -1,0 +1,7 @@
+s/(81)=0|/(81)=0(regular)|/g
+s/(81)=1|/(81)=1(soft dollar)|/g
+s/(81)=2|/(81)=2(step-in)|/g
+s/(81)=3|/(81)=3(step-out)|/g
+s/(81)=4|/(81)=4(soft-dollar step-in)|/g
+s/(81)=5|/(81)=5(soft-dollar step-out)|/g
+s/(81)=6|/(81)=6(plan sponsor)|/g

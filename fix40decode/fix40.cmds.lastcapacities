@@ -1,0 +1,4 @@
+s/(29)=1|/(29)=1(Agent)|/g
+s/(29)=2|/(29)=2(Cross as agent)|/g
+s/(29)=3|/(29)=3(Cross as principal)|/g
+s/(29)=4|/(29)=4(Principal)|/g

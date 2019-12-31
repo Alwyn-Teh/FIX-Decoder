@@ -1,0 +1,7 @@
+s/(98)=0|/(98)=0(None\/other)|/g
+s/(98)=1|/(98)=1(PKCS (proprietary))|/g
+s/(98)=2|/(98)=2(DES (EBC mode))|/g
+s/(98)=3|/(98)=3(PKCS\/DES (proprietary))|/g
+s/(98)=4|/(98)=4(PGP\/DES (defunct))|/g
+s/(98)=5|/(98)=5(PGP\/DES-MD5)|/g
+s/(98)=6|/(98)=6(PEM\/DES-MD5)|/g

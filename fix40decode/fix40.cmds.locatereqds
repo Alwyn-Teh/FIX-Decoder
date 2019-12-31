@@ -1,0 +1,2 @@
+s/(114)=Y|/(114)=Y(Indicates the broker is responsible for locating the stock)|/g
+s/(114)=N|/(114)=N(Indicates the broker is not required to locate)|/g

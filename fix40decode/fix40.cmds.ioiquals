@@ -1,0 +1,13 @@
+s/(104)=X|/(104)=X(Crossing opportunity)|/g
+s/(104)=O|/(104)=O(At the open)|/g
+s/(104)=M|/(104)=M(More behind)|/g
+s/(104)=P|/(104)=P(Taking a position)|/g
+s/(104)=V|/(104)=V(Versus)|/g
+s/(104)=Q|/(104)=Q(Current quote)|/g
+s/(104)=C|/(104)=C(At the close)|/g
+s/(104)=S|/(104)=S(Portfolio show-n)|/g
+s/(104)=I|/(104)=I(In touch with)|/g
+s/(104)=W|/(104)=W(Indication - Working away)|/g
+s/(104)=A|/(104)=A(All or none)|/g
+s/(104)=L|/(104)=L(Limit)|/g
+s/(104)=T|/(104)=T(Through the day)|/g

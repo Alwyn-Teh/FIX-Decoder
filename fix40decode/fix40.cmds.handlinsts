@@ -1,0 +1,3 @@
+s/(21)=1|/(21)=1(Automated execution order, private, no Broker intervention)|/g
+s/(21)=2|/(21)=2(Automated execution order, public, Broker intervention OK)|/g
+s/(21)=3|/(21)=3(Manual order, best execution)|/g

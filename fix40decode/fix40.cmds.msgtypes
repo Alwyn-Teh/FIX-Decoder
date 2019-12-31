@@ -1,0 +1,27 @@
+s/(35)=0|/(35)=0([5mHeartbeat[0m)|/g
+s/(35)=1|/(35)=1([1mTest Request[0m)|/g
+s/(35)=2|/(35)=2([1mResend Request[0m)|/g
+s/(35)=3|/(35)=3([1mReject[0m)|/g
+s/(35)=4|/(35)=4([1mSequence Reset[0m)|/g
+s/(35)=5|/(35)=5([1mLogout[0m)|/g
+s/(35)=6|/(35)=6([1mIndication of Interest[0m)|/g
+s/(35)=7|/(35)=7([1mAdvertisement[0m)|/g
+s/(35)=8|/(35)=8([1mExecution Report[0m)|/g
+s/(35)=9|/(35)=9([1mOrder Cancel Reject[0m)|/g
+s/(35)=A|/(35)=A([1mLogon[0m)|/g
+s/(35)=B|/(35)=B([1mNews[0m)|/g
+s/(35)=C|/(35)=C([1mEmail[0m)|/g
+s/(35)=D|/(35)=D([1mOrder - Single[0m)|/g
+s/(35)=E|/(35)=E([1mOrder - List[0m)|/g
+s/(35)=F|/(35)=F([1mOrder Cancel Request[0m)|/g
+s/(35)=G|/(35)=G([1mOrder Cancel\/Replace Request[0m)|/g
+s/(35)=H|/(35)=H([1mOrder Status Request[0m)|/g
+s/(35)=J|/(35)=J([1mAllocation[0m)|/g
+s/(35)=K|/(35)=K([1mList Cancel Request[0m)|/g
+s/(35)=L|/(35)=L([1mList Execute[0m)|/g
+s/(35)=M|/(35)=M([1mList Status Request[0m)|/g
+s/(35)=N|/(35)=N([1mList Status[0m)|/g
+s/(35)=P|/(35)=P([1mAllocation ACK[0m)|/g
+s/(35)=Q|/(35)=Q([1mDon't Know Trade (DK)[0m)|/g
+s/(35)=R|/(35)=R([1mQuote Request[0m)|/g
+s/(35)=S|/(35)=S([1mQuote[0m)|/g

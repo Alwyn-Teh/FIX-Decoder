@@ -1,0 +1,151 @@
+#!/usr/bin/bash
+#
+# Title:  fix40decode
+# Author: Alwyn Teh
+# Date:   Fri Sep 17 10:57:07 BST 1999
+#
+
+SyntaxHelp()
+{
+    echo "Syntax: fix40decode [-help] [-block] [-tail] [-f filename]"
+}
+
+ManPage()
+{
+    echo "NAME"
+    echo "      fix40decode - FIX 4.0 message decoder"
+    echo
+    echo "SYNOPSIS"
+    echo
+    echo "      fix40decode [-help] [-block] [-tail] [-f [4mfilename[0m]"
+    echo
+    echo "DESCRIPTION"
+    echo "      fix40decode translates FIX 4.0 protocol messages from"
+    echo "      the I/O ASCII format output by the Fix Line Manager into"
+    echo "      English. All message types, field names and values are"
+    echo "      decoded. The command accepts standard input or a [4mfilename[0m."
+    echo
+    echo "OPTIONS"
+    echo "      -help        Prints this help page."
+    echo "      -block       Formats output in block form."
+    echo "                   The default is line output, no formatting."
+    echo "      -tail        Must be used if piping standard input from"
+    echo "                   a 'tail -f' command to monitor a logfile."
+    echo "      -f [4mfilename[0m  Decodes the given [4mfilename[0m."
+    echo
+    echo "EXAMPLES"
+    echo "      To view non-active logfiles, use:"
+    echo "          fix40decode < kbsafix40oelm.io.990912"
+    echo "          fix40decode -block < cspbfix40oelm.io.990907"
+    echo "          fix40decode -f slftfix40oelm.io.990910"
+    echo "          fix40decode -block -f bonyfix40evlm.io.990914"
+    echo "          cat bbhfix40lm.io.990723 | fix40decode"
+    echo "          cat fix40mschklm.io.990826 | fix40decode -block"
+    echo
+    echo "      To monitor current and active logfiles, use:"
+    echo "          tail -f fix40mschklm2.io.990917 | fix40decode -tail"
+    echo "          tail -f kbsafix40oelm.io.990917 | fix40decode -tail -block"
+    echo
+    echo "      Selectively decode specific messages:"
+    echo "          grep '|35=' kbsafix40oelm.io.990912 | fix40decode -block"
+    echo
+    echo "NOTES"
+    echo "      Output best viewed using an xterm. A VT100 window over a telnet"
+    echo "      session may have trouble displaying output when used with the"
+    echo "      -block option. Escape sequences are used for highlighting, and"
+    echo "      special characters ^K and ^M are used for line wrapping."
+    echo
+    echo "AUTHOR"
+    echo "      Alwyn Teh 1999"
+    echo
+}
+
+FILEMODE=OFF
+FILENAME=
+BLOCKMODE=OFF
+TAILING=FALSE
+
+CR="|"
+FILEFLAGPOSN=
+
+PATH=$PATH:.
+
+# Process options...
+let pos=0
+for arg in $@
+do
+   let pos=pos+1
+   case $arg in
+       "-help"  ) ManPage | more; exit 0 ;;
+       "-block" ) BLOCKMODE=ON; CR="          " ;;
+       "-tail"  ) TAILING=TRUE ;;
+       "-f"     ) FILEMODE=ON; FILEFLAGPOSN=$pos ;;
+       *        ) if [[ $FILEMODE = "ON" ]] && [[ -f $arg ]] && \
+		     [[ $pos -eq ${FILEFLAGPOSN}+1 ]]
+		  then
+			FILENAME=$arg
+			if [[ ! -s $FILENAME ]]
+			then
+			    echo "Error: file $FILENAME is empty."
+			    exit 1
+			fi
+		  else
+			echo "Error:  $0 $@ ?"
+			SyntaxHelp
+			exit 1
+		  fi
+		  ;;
+   esac
+done
+
+FixDecoder()
+{
+	sed "s//|/g" | \
+	sed -f fix40.cmds -f fix40.cmds.msgtypes -f fix40.cmds.sides \
+	    -f fix40.cmds.settletypes -f fix40.cmds.ordtypes | \
+	sed -f fix40.cmds.advtranstypes -f fix40.cmds.advsides \
+	    -f fix40.cmds.commtypes -f fix40.cmds.execinsts | \
+	sed -f fix40.cmds.exectranstypes -f fix40.cmds.handlinsts \
+	    -f fix40.cmds.idsources -f fix40.cmds.lastcapacities | \
+	sed -f fix40.cmds.ioiqltyinds -f fix40.cmds.ioiothsvcs \
+	    -f fix40.cmds.ioishares -f fix40.cmds.ioitranstype | \
+	sed -f fix40.cmds.orderstatuses -f fix40.cmds.possdupflags \
+	    -f fix40.cmds.rule80a -f fix40.cmds.tifs -f fix40.cmds.urgencies | \
+	sed -f fix40.cmds.alloctranstypes -f fix40.cmds.processcodes \
+	    -f fix40.cmds.allocstatuses -f fix40.cmds.allocrejcodes \
+	    -f fix40.cmds.emailtypes -f fix40.cmds.miscfeetypes | \
+	sed -f fix40.cmds.encryptmethods -f fix40.cmds.exdests \
+	    -f fix40.cmds.cxlrejreasons -f fix40.cmds.ordrejreasons \
+	    -f fix40.cmds.ioiquals -f fix40.cmds.rpt2exchs | \
+	sed -f fix40.cmds.locatereqds -f fix40.cmds.forexreqs \
+	    -f fix40.cmds.gapfillflags -f fix40.cmds.cxltypes \
+	    -f fix40.cmds.dkreasons -f fix40.cmds.ioinaturals | \
+	sed -e "s/|$//" -e "s/|/${CR}/g"
+}
+
+LineProcessor()
+{
+	read line
+	while [[ $? = 0 ]]
+	do
+	    if [[ "$line" != "" ]]
+	    then
+		echo "$line" | FixDecoder
+	    fi
+	    read line
+	done
+}
+
+
+if [[ $FILEMODE = "ON" ]]
+then
+    FixDecoder < $FILENAME
+elif [[ $TAILING = "TRUE" ]]
+then
+    LineProcessor
+else
+    FixDecoder
+fi
+
+exit 0
+
